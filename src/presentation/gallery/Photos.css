@@ -1,0 +1,17 @@
+.photos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));;
+    text-align: center;
+    grid-gap: 10px;
+    padding: 1%;
+}
+
+.content-photo > img {
+    width: 100%;
+}
+
+.content-photo > h3 {
+    text-transform: capitalize;
+    font-size: 14px;
+    height: 36px;
+}

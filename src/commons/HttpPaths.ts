@@ -1,0 +1,1 @@
+export const HTTP_PHOTOS_PATH = '/photos'
