@@ -11,7 +11,7 @@ export const Posts: React.FC = () => {
     const resultPosts: Either<AxiosError, IPost[]> = useGetPosts(stateFilter)
 
     const setStateFilter = (event: ChangeEvent<HTMLInputElement>) => {
-        if (event.target.value === null || event.target.value.length === 0) {
+        if (event.target.value === null || event.target.value.length === 0 || event.target.value === '0') {
             updateStateFilter({id: []})
         } else {
             updateStateFilter({"id": [event.target.value]})
@@ -21,8 +21,8 @@ export const Posts: React.FC = () => {
     return <div>
         <input type="number" placeholder="Post id" onChange={setStateFilter}/>
         {isRight(resultPosts) ?
-            resultPosts.r.map(post => {
-                return <div className="post-container">
+            resultPosts.r.map((post, index) => {
+                return <div className="post-container" key={index}>
                     <h2>Title: {post.title}</h2>
                     <p>User: {post.userId}</p>
                     <p>Body: {post.body}</p>
