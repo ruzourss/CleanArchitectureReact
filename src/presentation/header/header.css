@@ -1,0 +1,13 @@
+.header-container {
+    display: grid;
+    text-align: center;
+    padding: 1%;
+    grid-gap: 1%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.header-container > .menu-item {
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
