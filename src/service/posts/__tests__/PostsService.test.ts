@@ -3,6 +3,11 @@ import {isLeft, isRight} from "../../../commons/Either"
 import {getPosts, IPostFilter, IPostResponse} from "../PostsService"
 
 describe('Get posts', () => {
+
+    afterEach(() => {
+        httpClientMock.reset()
+    })
+
     it('Success', async () => {
         // Given
         const post: IPostResponse = {
@@ -47,7 +52,8 @@ describe('Get posts', () => {
 
     it('Error - Server returned error', async () => {
         // Given
-        const postFilter: IPostFilter = {id: ['1', '2']}
+        const postFilter: IPostFilter = {id: ['2']}
+        // console.log(httpClientMock.history)
         httpClientMock.onGet('/posts', {
             params: postFilter
         }).reply(500, {message: 'Request failed with status code 500'})
