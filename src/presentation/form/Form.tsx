@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useState} from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 export const Form: React.FC = () => {
 
@@ -17,7 +17,7 @@ export const Form: React.FC = () => {
         <form onSubmit={onSubmitForm}>
             <input type="text" placeholder="Nombre de usuario" required autoFocus/>
             <input type="password" placeholder="Contraseña" required/>
-            <input type="checkbox" disabled={yearState < 18} checked={!(yearState < 18)} required/><span>Accepto!</span>
+            <input type="checkbox" disabled={yearState < 18} checked={!(yearState < 18)} required/><span>Acepto!</span>
             <input type="number" placeholder="Edad" value={yearState} onChange={updateState} required/>
             <button disabled={yearState < 18}>Enviar</button>
         </form>

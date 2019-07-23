@@ -1,6 +1,6 @@
-import React from 'react'
-import './header.css'
-import {Link} from "react-router-dom"
+import React from 'react';
+import { Link } from "react-router-dom";
+import './header.css';
 
 export const Header: React.FC = () => {
 
@@ -13,6 +13,9 @@ export const Header: React.FC = () => {
         </div>
         <div className="menu-item">
             <Link to='/form'>Form</Link>
+        </div>
+        <div className="menu-item">
+            <Link to='/login'>Login</Link>
         </div>
     </div>
 }
